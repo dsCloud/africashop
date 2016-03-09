@@ -1,28 +1,21 @@
 == README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+This ia an e-commerce application to give platfomrs for all made in Africa goods and products.
 
-Things you may want to cover:
+Things to cover in the web solution:
 
-* Ruby version
+* Multi Tenancy
 
-* System dependencies
+* Product Listing and creation by sellers
 
-* Configuration
+* Authorizations for both sellers and buyers
 
-* Database creation
+* Account integration for the Sellers
 
-* Database initialization
+* Commission based on products
 
-* How to run the test suite
+* Fund transfer to sellers after commission deductions
 
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+* Platform : Ruby on Rails
 
 
-Please feel free to use a different markup language if you do not plan to run
-<tt>rake doc:app</tt>.
