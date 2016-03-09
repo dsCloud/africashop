@@ -1,0 +1,24 @@
+<p id="notice"><%= notice %></p>
+
+  <div class="row">
+    <div class="col-md-6">
+      <div class="thumbnail">
+      <%= image_tag @product.image.url %>
+        </div>
+    </div>
+
+    <div class="col-md-6">
+      <h3><%= @product.name %></h3>
+      <p> <%= number_to_currency(@product.price) %></p>
+      <p><%= @product.description %></p>
+      <p><%= @product.color_id %></p>
+      <p><%= @product.category_id %></p>
+    </div>
+  </div>
+
+
+
+
+
+<%= link_to 'Edit', edit_product_path(@product),class: "btn btn-btn-link" %> |
+<%= link_to 'Back', products_path,class: "btn btn-btn-link"  %>
