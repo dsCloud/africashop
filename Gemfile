@@ -3,7 +3,10 @@ ruby '2.1.5'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.5.1'
-gem 'aws-sdk'
+
+gem 'aws-s3'
+gem 'aws-sdk-v1'
+gem 'aws-sdk', '~> 2'
 # Use sqlite3 as the database for Active Record
 gem "paperclip-dropbox", ">= 1.1.7"
 # Use SCSS for stylesheets
