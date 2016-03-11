@@ -7,6 +7,8 @@ class Product < ActiveRecord::Base
   s3_credentials: "#{Rails.root}/config/S3.yml"
   #path: "/:product/:style/:id/:filename"
   validates_attachment_content_type :image, content_type: /\Aimage\/.*\Z/
-
+  #product.image.url => 'https://dsafricashop.s3.amazonaws.com/'
 
 end
+
+
