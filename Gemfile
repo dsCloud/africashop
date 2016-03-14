@@ -7,6 +7,8 @@ gem 'rails', '4.2.5.1'
 gem 'aws-s3'
 gem 'aws-sdk-v1'
 gem 'aws-sdk', '~> 2'
+#Devise Installation
+
 # Use sqlite3 as the database for Active Record
 gem "paperclip-dropbox", ">= 1.1.7"
 # Use SCSS for stylesheets
@@ -29,6 +31,7 @@ gem 'jbuilder', '~> 2.0'
 gem 'sdoc', '~> 0.4.0', group: :doc
 gem "paperclip", "~> 4.3"
 gem 'figaro'
+gem 'devise'
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 

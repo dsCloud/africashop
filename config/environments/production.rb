@@ -85,6 +85,9 @@ Rails.application.configure do
     :secret_access_key => ENV['AWS_SECRET_ACCESS_KEY']
   }
 }
+  
+   #require for devise gem remember to change for actual web site address
+  config.action_mailer.default_url_options = { host: 'localhost', port: 3000 }
 end
 
 
