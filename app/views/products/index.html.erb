@@ -4,20 +4,22 @@
        <% @products.each do |product| %>
       <div class="col-md-3">
         <div class="thumbnail">
-           <%= image_tag product.image.url(:medium) %>
+           <%= link_to image_tag(product.image.url(:medium)), product %>
             <div class="caption">
-            <h3><%= product.name %></h3>
+            <h3><%= link_to product.name, product %></h3>
             <p><%= number_to_currency(product.price) %></p><br>
               <p><%= "Sold by #{product.user.name}" %></p><br>
-              <%= link_to 'Details', product, class: "btn btn-xs btn-info active"  %>
+      <% if user_signed_in? && current_user == product.user %>
               <%= link_to 'Edit', edit_product_path(product), class: "btn btn-warning btn-xs active" %>
               <%= link_to 'Delete', product, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-xs btn-danger active" %>
+       <% end %>
           </div>
           </div>
     </div>
 <% end %>
 </div>
   </div>
-
 <br>
-<%= link_to 'New Product', new_product_path, class: "btn btn-primary btn-sm active" %>
+ <% if (user_signed_in?) %>
+    <%= link_to 'New Product', new_product_path, class: "btn btn-primary btn-sm active" %>
+ <% end %>
