@@ -1,5 +1,8 @@
-
-<div class="center">
+<div class="jumbotron">
+    <h1>Made In Rwanda Products</h1>
+    <h3>Explore african made items and save the continent</h3>
+</div>
+  <div class="center">
     <div class="row">
        <% @products.each do |product| %>
       <div class="col-md-3">
@@ -9,7 +12,7 @@
             <h3><%= link_to product.name, product %></h3>
             <p><%= number_to_currency(product.price) %></p><br>
               <p><%= "Sold by #{product.user.name}" %></p><br>
- 
+
           </div>
           </div>
     </div>
