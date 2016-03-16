@@ -2,7 +2,7 @@ Rails.application.routes.draw do
   devise_for :users
   resources :products
   get 'pages/about'
-
+  get 'seller' => "products#seller"
   get 'pages/contact'
   root 'products#index'
   # The priority is based upon order of creation: first created -> highest priority.

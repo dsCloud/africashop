@@ -1,4 +1,3 @@
-
 <div class="center">
     <div class="row">
        <% @products.each do |product| %>
@@ -9,7 +8,10 @@
             <h3><%= link_to product.name, product %></h3>
             <p><%= number_to_currency(product.price) %></p><br>
               <p><%= "Sold by #{product.user.name}" %></p><br>
- 
+      <% if user_signed_in? && current_user == product.user %>
+              <%= link_to 'Edit', edit_product_path(product), class: "btn btn-warning btn-xs active" %>
+              <%= link_to 'Delete', product, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-xs btn-danger active" %>
+       <% end %>
           </div>
           </div>
     </div>
