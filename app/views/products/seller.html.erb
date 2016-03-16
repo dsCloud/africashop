@@ -1,24 +1,34 @@
-<div class="center">
-    <div class="row">
-       <% @products.each do |product| %>
-      <div class="col-md-3">
-        <div class="thumbnail">
-           <%= link_to image_tag(product.image.url(:medium)), product %>
-            <div class="caption">
-            <h3><%= link_to product.name, product %></h3>
-            <p><%= number_to_currency(product.price) %></p><br>
-              <p><%= "Sold by #{product.user.name}" %></p><br>
-      <% if user_signed_in? && current_user == product.user %>
-              <%= link_to 'Edit', edit_product_path(product), class: "btn btn-warning btn-xs active" %>
-              <%= link_to 'Delete', product, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-xs btn-danger active" %>
-       <% end %>
-          </div>
-          </div>
-    </div>
-<% end %>
-</div>
-  </div>
-<br>
  <% if (user_signed_in?) %>
     <%= link_to 'New Product', new_product_path, class: "btn btn-primary btn-sm active" %>
  <% end %>
+<br>
+<br>
+<table class="table table-striped table-bordered">
+<tr>
+ <th>Image</th>
+  <th>Name</th>
+  <th>Description</th>
+  <th>Price</th>
+  <th>Action</th>
+</tr>
+ <% @products.each do |product| %>
+<tr>
+   <td> <%=  image_tag product.image.url(:thumb) %></td>
+   <td><%= product.name %></td>
+   <td><%= product.description %></td>
+   <td><%= number_to_currency(product.price) %></td>
+  <td> <div class="btn-group">
+  <button type="button" class="btn btn-primary active">Action</button>
+  <button type="button" class="btn btn-primary dropdown-toggle active" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+    <span class="caret"></span>
+    <span class="sr-only">Toggle Dropdown</span>
+  </button>
+  <ul class="dropdown-menu">
+    <li><%= link_to 'View', product, class: "btn btn-link" %></li>
+    <li><%= link_to 'Edit', edit_product_path(product), class: "btn btn-link" %></li>
+    <li><%= link_to 'Delete', product, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-xs btn-link" %></li>
+  </ul>
+</div> <% end %></td>
+</table>
+
+
