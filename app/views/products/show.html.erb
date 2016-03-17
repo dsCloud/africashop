@@ -12,7 +12,8 @@
       <p> <%= number_to_currency(@product.price) %></p>
       <p><%= @product.description %></p>
       <p><%= @product.color_id %></p>
-      <p><%= @product.category_id %></p>
+      <p><%= @product.category_id %></p><br>
+      <%= link_to "Buy Now", new_product_order_path(@product), class: "btn btn-primary active" %>
     </div>
   </div>
 

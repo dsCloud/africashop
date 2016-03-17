@@ -1,0 +1,19 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  phone_number: MyString
+  address: MyString
+  sector: MyString
+  province: MyString
+  user_id: 1
+  buyer_id: 1
+  seller_id: 1
+
+two:
+  phone_number: MyString
+  address: MyString
+  sector: MyString
+  province: MyString
+  user_id: 1
+  buyer_id: 1
+  seller_id: 1
