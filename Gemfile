@@ -7,8 +7,9 @@ gem 'rails', '4.2.5.1'
 gem 'aws-s3'
 gem 'aws-sdk-v1'
 gem 'aws-sdk', '~> 2'
-#Devise Installation
-
+#Devise Installationbundle install
+#gem for shopping cart
+gem 'acts_as_shopping_cart', '~> 0.2.1'
 # Use sqlite3 as the database for Active Record
 gem "paperclip-dropbox", ">= 1.1.7"
 # Use SCSS for stylesheets
@@ -51,6 +52,9 @@ group :production do
   gem "rails_12factor"
 end
 group :development do
+  gem 'cucumber-rails', require: false
+   
+ gem 'rspec'
   # Access an IRB console on exception pages or by using <%= console %> in views
   gem 'web-console', '~> 2.0'
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring

@@ -20,6 +20,10 @@ class Product < ActiveRecord::Base
   validates_attachment_presence :image
   belongs_to :user
   has_many :orders
+  #has_many :order_items
+  #to implement the product active status and show if true
+  #default_scope { where(active: true) }
+
 end
 
 

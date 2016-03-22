@@ -1,8 +1,31 @@
 Rails.application.routes.draw do
+  get 'cart_items/create'
+
+  get 'cart_items/update'
+
+  get 'cart_items/destroy'
+
+  get 'carts/show'
+
+  get 'order_items/create'
+
+  get 'order_items/update'
+
+  get 'order_items/destroy'
+
+  get 'carts/show'
+
   devise_for :users
   resources :products do
-    resources :orders, only: [:new, :create]
+  resources :orders, only: [:new, :create]
   end
+ resource :shopping_cart
+#for Carts Implementation
+  #resources :products, only: [:index, :show]
+#  resource :cart, only: [:show]
+#  resources :order_items, only: [:create, :update, :destroy]
+  #root to: "products#index"
+
   get 'pages/about'
   get 'seller' => "products#seller"
   get 'pages/contact'
