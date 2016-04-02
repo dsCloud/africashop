@@ -5,8 +5,13 @@ class ProductsController < ApplicationController
   # GET /products
   # GET /products.json
   def index
-    @products = Product.all.order('created_at DESC')
-   # @order_item = current_order.order_items.new
+    if params[:category].blank?
+      @products = Product.all.order('created_at DESC').paginate(:page => params[:page], :per_page => 12)
+    else
+      @category_id = Category.find_by(name: params[:category]).id
+      @products = Product.where(category_id: @category_id).order("created_at DESC").paginate(:page => params[:page], :per_page => 12)
+       # @order_item = current_order.order_items.new
+    end
   end
 
   # GET /products/1

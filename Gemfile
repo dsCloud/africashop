@@ -3,7 +3,8 @@ ruby '2.1.5'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.5.1'
-
+gem 'will_paginate', '~> 3.0.6'
+gem 'will_paginate-bootstrap'
 gem 'aws-s3'
 gem 'aws-sdk-v1'
 gem 'aws-sdk', '~> 2'
@@ -53,7 +54,7 @@ group :production do
 end
 group :development do
   gem 'cucumber-rails', require: false
-   
+
  gem 'rspec'
   # Access an IRB console on exception pages or by using <%= console %> in views
   gem 'web-console', '~> 2.0'

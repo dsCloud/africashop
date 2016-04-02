@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  resources :colors
+  resources :categories
   get 'cart_items/create'
 
   get 'cart_items/update'
